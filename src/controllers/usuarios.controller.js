@@ -12,12 +12,20 @@ module.exports = {
         res.json(msg);
     },
     async list(req, res){
+        // TODO: adicionar try/catch
+        // TODO: adicionar parametros de listagem
+        // TODO: adicionar logs
+        // TODO: adicionar validação de permissão
+        console.log("Estou no Controller Usuários: list");
         let users = await usuarioModel.find();
         res.json(users);
     },
     async create(req, res){
         try{
-            console.log("estou no usuarioController.")
+            // TODO: adicionar try/catch
+            // TODO: adicionar logs
+            // TODO: adicionar validação de permissão
+            console.log("Estou no Controller Usuários: create");
             let data = req.body;
             
             let user = await usuarioModel.findOne({email:data.email});
@@ -41,10 +49,23 @@ module.exports = {
         }
     },
     async details(req, res){
-        console.log("Estou no Controller.details");
+        // TODO: adicionar try/catch
+        // TODO: adicionar logs
+        // TODO: adicionar validação de permissão
+        console.log("Estou no Controller Usuários: details");
         let _id = req.params;
-        console.log("params: ",req.params);
+        console.log("params: ", _id);
         let user = await usuarioModel.findOne({_id:_id});
+        res.json(user);
+    },
+    async delete(req, res){
+        // TODO: adicionar try/catch
+        // TODO: adicionar logs
+        // TODO: adicionar validação de permissão
+        console.log("Estou no Controller Usuários : delete");
+        let _id = req.params._id;
+        console.log("params: ",_id);
+        let user = await usuarioModel.findByIdAndDelete({_id:_id});
         res.json(user);
     }
 }
