@@ -3,13 +3,17 @@ const bcrypt = require('bcrypt');
 const utils = require('../functions/utils');
 
 module.exports = {
-    
+
     index(req, res){
         let msg = {
             message: "Hello World from Controller Usuários"
         };
         console.log(msg);
         res.json(msg);
+    },
+    async list(req, res){
+        let users = await usuarioModel.find();
+        res.json(users);
     },
     async create(req, res){
         try{
@@ -35,5 +39,12 @@ module.exports = {
         catch(error){
             console.log(error);
         }
+    },
+    async details(req, res){
+        console.log("Estou no Controller.details");
+        let _id = req.params;
+        console.log("params: ",req.params);
+        let user = await usuarioModel.findOne({_id:_id});
+        res.json(user);
     }
 }

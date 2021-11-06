@@ -24,11 +24,13 @@ app.use(express.json());
 app.use(routes);
 
 function logErrors (err, req, res, next) {
+    console.log("estou no logErrors")
     console.error(err.stack)
     next(err)
 }
 function errorHandler (err, req, res, next) {
     res.status(500)
+    console.log("estou no ErrorHandler")
     res.render('error', { error: err })
 }
 

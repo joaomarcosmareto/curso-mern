@@ -4,6 +4,8 @@
 4. usar um gerenciador de processo para restart automático;
 5. adicionar ssl;
 6. implementar as observações deste link: https://expressjs.com/pt-br/advanced/best-practice-security.html;
+7. proteger as funcoes do controller com try/catch
+
 
 
 # replace minuscula por maiuscula
