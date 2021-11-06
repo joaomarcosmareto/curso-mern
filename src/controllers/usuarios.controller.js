@@ -53,7 +53,7 @@ module.exports = {
         // TODO: adicionar logs
         // TODO: adicionar validação de permissão
         console.log("Estou no Controller Usuários: details");
-        let _id = req.params;
+        let _id = req.params._id;
         console.log("params: ", _id);
         let user = await usuarioModel.findOne({_id:_id});
         res.json(user);
@@ -64,8 +64,21 @@ module.exports = {
         // TODO: adicionar validação de permissão
         console.log("Estou no Controller Usuários : delete");
         let _id = req.params._id;
-        console.log("params: ",_id);
+        console.log("params: ", _id);
         let user = await usuarioModel.findByIdAndDelete({_id:_id});
+        res.json(user);
+    },
+    async update(req, res){
+        // TODO: adicionar try/catch
+        // TODO: adicionar logs
+        // TODO: adicionar validação de permissão
+        console.log("Estou no Controller Usuários : update");
+        let data = req.body;
+        console.log("params: ", data);
+
+        // TODO: validar alteração de senha
+
+        let user = await usuarioModel.findByIdAndUpdate({_id: data._id}, data, {new: true});
         res.json(user);
     }
 }
