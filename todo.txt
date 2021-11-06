@@ -1,0 +1,13 @@
+1. separar a conexão com o mongo num arquivo separado;
+2. detectar desconexão com o banco de dados e ficar tentando conectar novamente;
+3. adicionar logs ao syslog ou a um arquivo de logs;
+4. usar um gerenciador de processo para restart automático;
+5. adicionar ssl;
+6. implementar as observações deste link: https://expressjs.com/pt-br/advanced/best-practice-security.html;
+
+
+# replace minuscula por maiuscula
+rename -f 'y/A-Z/a-z/' *
+
+# replace espaço por traço
+rename -f "s/ /-/g" *
