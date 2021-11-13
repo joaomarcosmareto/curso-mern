@@ -6,7 +6,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import ExitToApp from '@mui/icons-material/ExitToApp';
 
 export const mainListItems = (
   <div>
@@ -36,7 +36,7 @@ export const secondaryListItems = (
     <ListSubheader inset>Opções</ListSubheader>
     <ListItem button>
       <ListItemIcon>
-        <AssignmentIcon />
+        <ExitToApp />
       </ListItemIcon>
       <ListItemText primary="Sair" />
     </ListItem>
